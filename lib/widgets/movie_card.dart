@@ -117,7 +117,7 @@ class MovieCard extends StatelessWidget {
                     Text(
                       movie.overview.isNotEmpty
                           ? movie.overview
-                          : 'Açıklama bulunmuyor.',
+                          : 'No description available.',
                       style: TextStyle(
                         color: Colors.grey.shade600,
                         fontSize: 13,

@@ -32,11 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
               return const Center(child: CircularProgressIndicator());
             }
             if (snap.hasError) {
-              return Center(child: Text('Hata: ${snap.error}'));
+              return Center(child: Text('Error: ${snap.error}'));
             }
             final list = snap.data ?? [];
             if (list.isEmpty) {
-              return const Center(child: Text('Veri yok'));
+              return const Center(child: Text('No data available'));
             }
             return ListView.builder(
               padding: const EdgeInsets.only(top: 8, bottom: 16),

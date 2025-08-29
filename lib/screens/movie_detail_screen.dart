@@ -41,7 +41,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                 builder: (context, c) {
                   final wide = c.maxWidth >= 900;
 
-                  // --- DAR EKRAN: tam sığan üst görsel + içerik ---
+                  // --- NARROW SCREEN: fully contained top image + content ---
                   if (!wide) {
                     final heroUrl = m.backdropUrl.isNotEmpty
                         ? m.backdropUrl
@@ -52,13 +52,13 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                         SliverAppBar(
                           pinned: true,
                           centerTitle: true,
-                          title: const Text('Film Detayı'),
+                          title: const Text('Movie Details'),
                           expandedHeight: 260,
                           flexibleSpace: FlexibleSpaceBar(
                             background: heroUrl.isNotEmpty
                                 ? Image.network(
                                     heroUrl,
-                                    fit: BoxFit.cover, // EKRANI TAM DOLDURUR
+                                    fit: BoxFit.cover, // FILLS SCREEN COMPLETELY
                                     width: double.infinity,
                                   )
                                 : Container(color: Colors.black26),
@@ -74,13 +74,13 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                     );
                   }
 
-                  // --- GENİŞ EKRAN: solda poster, sağda metin (taşma yok) ---
+                  // --- WIDE SCREEN: poster on left, text on right (no overflow) ---
                   return CustomScrollView(
                     slivers: [
                       SliverAppBar(
                         pinned: true,
                         centerTitle: true,
-                        title: const Text('Film Detayı'),
+                        title: const Text('Movie Details'),
                       ),
                       SliverToBoxAdapter(
                         child: Center(
@@ -144,7 +144,7 @@ class _DetailText extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 12),
-        Text(movie.overview.isNotEmpty ? movie.overview : 'Açıklama yok.'),
+        Text(movie.overview.isNotEmpty ? movie.overview : 'No description available.'),
         const SizedBox(height: 24),
       ],
     );

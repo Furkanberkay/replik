@@ -44,7 +44,7 @@ class _SearchScreenState extends State<SearchScreen> {
     if (query.length < 2) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('En az 2 karakter yaz 😊'),
+          content: Text('Please type at least 2 characters 😊'),
           duration: Duration(seconds: 2),
         ),
       );
@@ -86,7 +86,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         fontSize: 16,
                       ),
                       decoration: InputDecoration(
-                        hintText: 'Film ara (örn. Inception)',
+                        hintText: 'Search for movies (e.g. Inception)',
                         hintStyle: const TextStyle(
                           color: Colors.grey,
                           fontSize: 16,
@@ -111,7 +111,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   ElevatedButton.icon(
                     onPressed: _doSearch,
                     icon: const Icon(Icons.search),
-                    label: const Text('Ara'),
+                    label: const Text('Search'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.orange,
                       foregroundColor: Colors.white,
@@ -136,7 +136,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           ),
                           SizedBox(height: 16),
                           Text(
-                            'Film aramak için yaz ve Ara tuşuna bas',
+                            'Type to search for movies and press Search',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.white,
@@ -159,7 +159,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                 ),
                                 SizedBox(height: 16),
                                 Text(
-                                  'Filmler aranıyor...',
+                                  'Searching for movies...',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 16,
@@ -182,7 +182,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                 ),
                                 const SizedBox(height: 16),
                                 const Text(
-                                  'Arama sırasında hata oluştu',
+                                  'Error occurred while searching',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 16,
@@ -200,7 +200,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                 const SizedBox(height: 16),
                                 ElevatedButton(
                                   onPressed: _doSearch,
-                                  child: const Text('Tekrar Dene'),
+                                  child: const Text('Try Again'),
                                 ),
                               ],
                             ),
@@ -220,7 +220,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                 ),
                                 const SizedBox(height: 16),
                                 const Text(
-                                  'Sonuç bulunamadı',
+                                  'No results found',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18,
@@ -228,7 +228,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
-                                  '"${_controller.text}" için sonuç bulunamadı',
+                                  'No results found for "${_controller.text}"',
                                   style: const TextStyle(
                                     color: Colors.white70,
                                     fontSize: 14,
@@ -238,7 +238,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                 const SizedBox(height: 16),
                                 ElevatedButton(
                                   onPressed: _clearSearch,
-                                  child: const Text('Yeni Arama Yap'),
+                                  child: const Text('New Search'),
                                 ),
                               ],
                             ),
@@ -256,7 +256,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               ),
                               color: Colors.white.withOpacity(0.1),
                               child: Text(
-                                '${list.length} film bulundu',
+                                '${list.length} movies found',
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 14,

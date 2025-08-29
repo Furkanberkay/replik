@@ -15,7 +15,7 @@ class _ReplikAppState extends State<ReplikApp> {
   int _index = 0;
 
   final _screens = const [HomeScreen(), SearchScreen()];
-  final _titles = const ['Popüler', 'Ara'];
+  final _titles = const ['Popular', 'Search'];
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +33,8 @@ class _ReplikAppState extends State<ReplikApp> {
           currentIndex: _index,
           onTap: (i) => setState(() => _index = i),
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.movie), label: 'Popüler'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Ara'),
+            BottomNavigationBarItem(icon: Icon(Icons.movie), label: 'Popular'),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
           ],
         ),
       ),
