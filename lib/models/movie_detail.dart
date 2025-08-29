@@ -3,11 +3,11 @@ import 'genre.dart';
 import 'cast_member.dart';
 
 class MovieDetail {
-  final Movie base; // daha önceki Movie modelin
+  final Movie base;
   final List<Genre> genres;
-  final int? runtime; // dakika
+  final int? runtime; // minutes
   final String? tagline;
-  final List<CastMember> cast; // sadece oyuncular (fragman yok)
+  final List<CastMember> cast;
 
   MovieDetail({
     required this.base,
@@ -21,6 +21,12 @@ class MovieDetail {
     final r = runtime;
     if (r == null || r <= 0) return '—';
     final h = r ~/ 60, m = r % 60;
-    return h > 0 ? '${h}sa ${m}dk' : '${m}dk';
+    return h > 0 ? '${h}h ${m}m' : '${m}m';
   }
+
+  // Helper methods for cleaner UI code
+  bool get hasGenres => genres.isNotEmpty;
+  bool get hasCast => cast.isNotEmpty;
+  bool get hasTagline => tagline != null && tagline!.isNotEmpty;
+  bool get hasRuntime => runtime != null && runtime! > 0;
 }

@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:replik/models/cast_member.dart';
-import 'package:replik/models/genre.dart';
-import 'package:replik/models/movie_detail.dart';
+import '../models/cast_member.dart';
+import '../models/genre.dart';
+import '../models/movie_detail.dart';
 import '../models/movie.dart';
 
 class TmdbApi {
